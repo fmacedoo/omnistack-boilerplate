@@ -27,5 +27,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Use Routes
 app.use('/', routes.user);
+app.use('/api/messages', routes.message);
 
 module.exports = app;
