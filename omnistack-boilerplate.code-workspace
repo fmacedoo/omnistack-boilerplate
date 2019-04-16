@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"name": "Node API",
+			"path": "api"
+		},
+		{
+			"name": "React WEB",
+			"path": "web"
+		},
+		{
+			"name": "React APP",
+			"path": "app"
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}

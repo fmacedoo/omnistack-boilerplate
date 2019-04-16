@@ -1,0 +1,305 @@
+{
+	"info": {
+		"_postman_id": "51032646-eb2b-46f4-a917-79fe3883d4af",
+		"name": "Ouvidoria",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"fmacedoo@gmail.com\",\n\t\"password\": \"123456\"\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/token",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Filipe Macêdo\",\n\t\"email\": \"fmacedoo@gmail.com\",\n\t\"password\": \"123456\",\n\t\"passwordConfirmation\": \"123456\"\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/signup",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Session",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{AUTHORIZATION}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/session",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"session"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ouvidores",
+			"item": [
+				{
+					"name": "GET all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTHORIZATION}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/api/ouvidores",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"ouvidores"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Demanda",
+			"item": [
+				{
+					"name": "GET All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTHORIZATION}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/api/demandas",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"demandas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{AUTHORIZATION}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/api/demandas/5c755037aa9cea11d07d5b4d",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"demandas",
+								"5c755037aa9cea11d07d5b4d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTHORIZATION}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"assunto\": \"Esgoto a céu aberto\",\n\t\"comentario\": \"A rua da areia esta um descaso o esgoto corre a céu aberto ningueém consegue respirar da catinga que fica. E em dia de chuva entra tudo na casa do povo\",\n\t\"ouvidor\": \"5c700f2e51609a05e77dcda6\"\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/api/demandas/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"demandas",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Mensagem",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTHORIZATION}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"comentario\": \"Esqueci de dizer que na rua tampa do buero foi roubada.\"\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/api/demandas/5c755037aa9cea11d07d5b4d/mensagem",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"demandas",
+								"5c755037aa9cea11d07d5b4d",
+								"mensagem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Imagem",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTHORIZATION}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"url\": \"https://c1.staticflickr.com/2/1389/5115237627_b77b047523_b.jpg\"\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/api/demandas/5c755037aa9cea11d07d5b4d/imagem",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"demandas",
+								"5c755037aa9cea11d07d5b4d",
+								"imagem"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
