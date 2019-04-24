@@ -17,14 +17,14 @@ export function* handleErrors(action) {
             return;
         }
         
-        return console.log(errors);
+        return console.log('handleErrors:Unauthorized', errors);
     }
 
     if (errors instanceof Error) {
-        return console.log(errors);
+        return console.log('handleErrors:Error', errors);
     }
 
-    yield put(alert.openAlert, errors);
+    yield put(alert.openAlert(errors));
 }
 
 export default function* root() {

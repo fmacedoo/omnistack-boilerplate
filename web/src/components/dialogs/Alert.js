@@ -21,13 +21,11 @@ const Alert = (props) => {
         >
             <DialogTitle id="alert-dialog-title">{(alert && alert.title) || 'Alert!'}</DialogTitle>
             <DialogContent>
-                <DialogContentText id="alert-dialog-description">
                     {
-                        alert && alert.messages && alert.messages.map && alert.messages.map(o => (
-                            <p>{ o }</p>
+                        alert && alert.messages && alert.messages.map && alert.messages.map((o, i) => (
+                            <DialogContentText id="alert-dialog-description" key={i}>{ o }</DialogContentText>
                         ))
                     }
-                </DialogContentText>
             </DialogContent>
             <DialogActions>
                 <Button onClick={closeAlert} color="primary" autoFocus>
