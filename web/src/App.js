@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// Dialogs and Loaders
+import Alert from './components/dialogs/Alert';
+import LinearProgressLoader from './components/loaders/LinearProgressLoader';
+
+// Layouts
+import LoadedLayout from './components/layout/LoadedLayout';
+import LoadingLayout from './components/layout/LoadingLayout';
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Alert />
+        <LinearProgressLoader />
+        <LoadedLayout />
+        <LoadingLayout />
+      </div>
+    );
+  }
 }
 
 export default App;
